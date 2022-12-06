@@ -1,36 +1,14 @@
-let snowflakes_count = 60;
-
-// let base_css = ``; // Put your custom base css here
+// quantity of snowflakes to display
+let nb_snowflakes = 140;
 
 if (typeof total !== 'undefined'){
-    snowflakes_count = total;
+    nb_snowflakes = total;
 }
 
-
-// This function allows you to turn on and off the snow
-function toggle_snow() {
-    let check_box = document.getElementById("toggle_snow");
-    if (check_box.checked == true) {
-        document.getElementById('snow').style.display = "block";
-    }
-    else {
-        document.getElementById('snow').style.display = "none";
-    }
-}
-
-// Creating snowflakes
-function spawn_snow(snow_density = 200) {
-    snow_density -= 1;
-
-    for (let x = 0; x < snow_density; x++) {
-        let board = document.createElement('div');
-        board.className = "snowflake";
-
-        document.getElementById('snow').appendChild(board);
-    }
-}
-
-// Append style for each snowflake to the head
+/**
+ * Function to set style for each snowflake 
+ * to the head
+ */
 function add_css(rule) {
     let css = document.createElement('style');
     css.type = 'text/css';
@@ -38,13 +16,18 @@ function add_css(rule) {
     document.getElementsByTagName("head")[0].appendChild(css);
 }
 
-
-
-// Math
+/**
+ * Math function to have random int between
+ * 0 and 100
+ */
 function random_int(value = 100){
     return Math.floor(Math.random() * value) + 1;
 }
-
+/**
+ * Math function to take random value between
+ * two others values which define the range for 
+ * snowflake
+ */
 function random_range(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -52,15 +35,17 @@ function random_range(min, max) {
 }
 
 
-// Create style for snowflake
-function spawnSnowCSS(snow_density = 200){
+/**
+ * Function to create animation for snowflakes
+ */
+function create_snow(snow_quantity = 200){
     let snowflake_name = "snowflake";
     let rule = ``;
     if (typeof base_css !== 'undefined'){
         rule = base_css;
     }
     
-    for(let i = 1; i < snow_density; i++){
+    for(let i = 1; i < snow_quantity; i++){
         let random_x = Math.random() * 100; // vw
         let random_offset = random_range(-100000, 100000) * 0.0001; // vw;
         let random_x_end = random_x + random_offset;
@@ -95,10 +80,39 @@ function spawnSnowCSS(snow_density = 200){
     add_css(rule);
 }
 
-// Load the rules and execute after the DOM loads
-window.onload = function() {
-    spawnSnowCSS(snowflakes_count);
-    spawn_snow(snowflakes_count);
-};
+/**
+ * Function used to create snowflakes
+ */
+function create_snowflakes(snow_quantity = 200) {
+    snow_quantity -= 1;
 
-// TODO add progress bar for slower clients
+    for (let x = 0; x < snow_quantity; x++) {
+        let board = document.createElement('div');
+        board.className = "snowflake";
+
+        document.getElementById('snow').appendChild(board);
+    }
+}
+
+/**
+ * Function to turn on and off the snowtime process
+ * as you wish (usually for settings buttons)
+ */
+function toggle_snow() {
+    let check_box = document.getElementById("toggle_snow");
+    if (check_box.checked == true) {
+        document.getElementById('snow').style.display = "block";
+    }
+    else {
+        document.getElementById('snow').style.display = "none";
+    }
+}
+
+/**
+ * Function to launch the snow time after
+ * configuration
+ */
+window.onload = function() {
+    create_snow(nb_snowflakes);
+    create_snowflakes(nb_snowflakes);
+};
