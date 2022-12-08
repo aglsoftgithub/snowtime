@@ -33,16 +33,30 @@ SnowTime is just a full CSS and JavaScript that allows you to add snowflakes on 
 3. Add an empty div or section with 'snow' as id inside body tag just before another html code
 
 ```html
-<!-- Section where snowflakes will started -->
+<!-- Section where snowflakes will start to form -->
 <div id="snow"></div>
 
 <!-- The rest of the html code -->
 ```
 
-5. Check default configuration of snowtime and modify as your wish
+5. Adjust the default configuration of snowtime as you wish in the first lines of the _snow.js_ file.
 ```js
 // quantity of snowflakes to display
 let nb_snowflakes = 140;
+```
+
+6. To define a different style for the snowflakes, you have to write your own css style with the snowflake class
+```css
+/* your custom css file */
+
+.snowflake{
+	/* your custom css style here... */
+}
+```
+
+7. You can also turn the snowmaking process on and off using the toggle_snow function
+```html
+<button type="button" onclick="toggle_snow()">Turn On/Off</button>
 ```
 
 ## Documentation 📜

@@ -1,10 +1,6 @@
 // quantity of snowflakes to display
 let nb_snowflakes = 140;
 
-if (typeof total !== 'undefined'){
-    nb_snowflakes = total;
-}
-
 /**
  * Function to set style for each snowflake 
  * to the head
@@ -23,6 +19,7 @@ function add_css(rule) {
 function random_int(value = 100){
     return Math.floor(Math.random() * value) + 1;
 }
+
 /**
  * Math function to take random value between
  * two others values which define the range for 
