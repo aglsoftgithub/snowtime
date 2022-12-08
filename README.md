@@ -24,10 +24,10 @@ SnowTime is just a full CSS and JavaScript that allows you to add snowflakes on 
 
 ```html
 <!-- import css -->
-<link rel="stylesheet" href="<your_path_to_css>/live-bg.css"/>
+<link rel="stylesheet" href="<your_path_to_css>/snow.css"/>
 
 <!-- import js -->
-<script type="text/javascript" src="<your_path_to_css>/live-bg.js"></script>
+<script type="text/javascript" src="<your_path_to_css>/snow.js"></script>
 ```
 
 3. Add an empty div or section with 'snow' as id inside body tag just before another html code
