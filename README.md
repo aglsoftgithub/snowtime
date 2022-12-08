@@ -7,7 +7,7 @@
 </h1>
 <p align="center">Simple code to add snowflakes on a website</p>
 
-![Live Background Demo Image](https://aglsofthostingwebserver.on.drv.tw/sites/snowtime/demo.png)
+![SnowTime Demo Image](https://github.com/aglsoftgithub/snowtime/blob/master/demo.png)
 
 ![GitHub](https://img.shields.io/github/license/themeselection/sneat-html-admin-template-free)
 
